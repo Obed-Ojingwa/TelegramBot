@@ -42,6 +42,11 @@ class MyTelegramBot : TelegramLongPollingBot() {
         val message = SendMessage()
         message.chatId = chatId.toString()
         message.text = "Delighted to have you!!!."
+        message.text = "Follow our twitter channel" +
+                "https://x.com/saturn69453/status/1802062302633464270?s=46"
+        message.text = "Join our telegram channel" +
+                "https://t.me/+aTyZGC3DVEphNGVk"
+
 
         try {
             execute(message)
@@ -53,12 +58,31 @@ class MyTelegramBot : TelegramLongPollingBot() {
     private fun sendWelcomeImage(chatId: Long) {
         val photo = SendPhoto()
         photo.chatId = chatId.toString()
-        val imagePath = "C:\\Users\\CHINAZA\\IdeaProjects\\SATURN\\src\\main\\resources\\saturn_img.jpg"
+        val imagePath = "C:\\Users\\CHINAZA\\IdeaProjects\\SATURN\\src\\main\\resources\\saturnX.jpeg"
         val imageFile = File(imagePath)
 
         if (imageFile.exists() && imageFile.canRead()) {
             photo.photo = InputFile(imageFile)
-            photo.caption = "Welcome to the bot, under heavy construction!"
+            photo.caption = """
+    We are delighted to have you! Our social handles are available for this bot.
+    We are under heavy construction, yet almost done with the game integration.
+    ${'$'}SATURN exemplifies the dynamic and often unpredictable nature of the cryptocurrency market. By blending astrology with innovation, it captures the essence of what makes meme coins appealing while striving for real-world applicability. As the project develops, it will be fascinating to see how ${'$'}SATURN navigates the challenges and opportunities that lie ahead, potentially setting new standards for meme coins and beyond. Come onboard if you’re tired of earth definitely not a fan of Mars, let’s set sail to Saturn.
+    https://t.me/+aTyZGC3DVEphNGVk
+    Follow our twitter channel
+    https://x.com/saturn69453/status/1802062302633464270?s=46
+""".trimIndent()
+            val message = SendMessage()
+            message.chatId = chatId.toString()
+            message.text = "$*SATURN exemplifies the dynamic and often unpredictable nature of the cryptocurrency market. By blending astrology with innovation, it captures the essence of what makes meme coins appealing while striving for real-world applicability. As the project develops, it will be fascinating to see how $*SATURN navigates the challenges and opportunities that lie ahead, potentially setting new standards for meme coins and beyond. \n" +
+                    "\n" +
+                    "Come onboard if you’re tired of earth definitely not a fan of Mars, let’s set sail to Saturn" +
+                    "https://t.me/+aTyZGC3DVEphNGVk"
+
+            message.text = "Follow our twitter channel" +
+                    "https://x.com/saturn69453/status/1802062302633464270?s=46"
+            message.text = "Join our telegram channel" +
+                    "https://t.me/+aTyZGC3DVEphNGVk"
+
 
             try {
                 execute(photo)
@@ -80,6 +104,15 @@ class MyTelegramBot : TelegramLongPollingBot() {
         val message = SendMessage()
         message.chatId = chatId.toString()
         message.text = "We are delighted to have you\nOur social handles will be provided to this bot\nWe are on under heavy construction, yet almost done with the game integration"
+        message.text = "$*SATURN exemplifies the dynamic and often unpredictable nature of the cryptocurrency market. By blending astrology with innovation, it captures the essence of what makes meme coins appealing while striving for real-world applicability. As the project develops, it will be fascinating to see how $*SATURN navigates the challenges and opportunities that lie ahead, potentially setting new standards for meme coins and beyond. \n" +
+                "" +
+                "Come onboard if you’re tired of earth definitely not a fan of Mars, let’s set sail to Saturn" +
+                "https://t.me/+aTyZGC3DVEphNGVk"
+
+        message.text = "Follow our twitter channel" +
+                "https://x.com/saturn69453/status/1802062302633464270?s=46"
+        message.text = "Join our telegram channel" +
+                "https://t.me/+aTyZGC3DVEphNGVk"
 
         try {
             execute(message)
